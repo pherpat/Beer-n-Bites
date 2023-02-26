@@ -45,5 +45,5 @@
   If you wish to add or contribute to this project, please fork the project repository onto your github account
 
   ## Questions
-  View this project repository on [Github](https://github.com/imjustSahen/A-Team)<br>
+  View this project repository on [Github](https://github.com/pherpat/Beer-n-Bites)<br>
   If you have any further questions about the application or how you can contribute, you can reach us by email at: matthewrdelgado@gmail.com, Wyattdomanski.md@gmail.com, patinopher@gmail.com, imjustsahen@gmail.com.
