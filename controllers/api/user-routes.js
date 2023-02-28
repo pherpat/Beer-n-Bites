@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User, Pairing, Review, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//  This is the 'get' route 
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -29,7 +30,7 @@ router.get("/", async (req, res) => {
     console.log(err);
   }
 });
-
+//  This is the 'post' route 
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
@@ -48,7 +49,7 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'get' route - id 
 router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
@@ -78,7 +79,7 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'put' route - id
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const userData = await User.update(req.body, {
@@ -95,7 +96,7 @@ router.put("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'delete' route - id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const userData = await User.destroy({
@@ -112,7 +113,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'post' route - login
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -144,7 +145,7 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'post' route - logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

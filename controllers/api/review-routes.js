@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Pairing, Review, Comment } = require('../../models');
 
+//  This is the 'get' route 
 router.get('/', async (req, res) => {
     try {
         const reviewData = await Review.findAll({
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//  This is the 'post' route 
 router.post('/', async (req, res) => {
     try {
         const reviewData = await Review.create({
@@ -59,7 +60,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-
+//  This is the 'put' route 
 router.put('/:id', async (req, res) => {
     try{
       const reviewData = await Review.update(req.body, {
@@ -76,7 +77,7 @@ router.put('/:id', async (req, res) => {
       res.status(500).json(err);
     }
 });
-
+//  This is the 'delete' route 
 router.delete('/:id', async (req, res) => {
     try{
       const reviewData = await Review.destroy({

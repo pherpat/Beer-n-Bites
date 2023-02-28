@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 const { User, Pairing, Comment, Review } = require("../models");
-
+//  This is the 'get' route 
 router.get("/", async (req, res) => {
   try {
     const pairingData = await Pairing.findAll({
@@ -29,15 +29,15 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//  This is the 'get' route - about us
 router.get("/aboutUs", (req, res) => {
   res.render("aboutUs", { loggedIn: req.session.loggedIn });
 });
-
+//  This is the 'get' route - contact us
 router.get("/contactUs", (req, res) => {
   res.render("contactUs", { loggedIn: req.session.loggedIn });
 });
-
+//  This is the 'get' route - pairing
 router.get("/pairing", async (req, res) => {
   try {
      if (req.session.loggedIn) {

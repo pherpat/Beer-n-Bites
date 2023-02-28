@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Pairing, Review, Comment } = require('../../models');
 
+//  This is the 'get' route 
 router.get('/', async (req, res) => {
     try {
         const pairingData = await Pairing.findAll({
@@ -23,7 +24,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//  This is the 'post' route 
 router.post('/', async (req, res) => {
     try {
         const pairingData = await Pairing.create({
@@ -42,7 +43,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//  This is the 'get' route by id
 router.get('/:id', async (req, res) => {
     try {
         const pairingData = await Pairing.findByPk(req.params.id);
@@ -57,7 +58,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//  This is the 'put' route 
 router.put('/:id', async (req, res) => {
     try{
       const pairingData = await Pairing.update(req.body, {
@@ -74,7 +75,7 @@ router.put('/:id', async (req, res) => {
       res.status(500).json(err);
     }
 });
-
+//  This is the 'delete' route 
 router.delete('/:id', async (req, res) => {
     try{
       const pairingData = await Pairing.destroy({
