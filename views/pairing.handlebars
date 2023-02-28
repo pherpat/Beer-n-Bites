@@ -1,8 +1,11 @@
+
+
+
+
 {{! <!-- CARDS --> }}
-<section class="heroPic heroPicDarker hero-content">
+<section class="hero-content hero-content-dark">
   <div class="hero-flex">
-    {{!-- <h1 class="pair-intro">Try this pair</h1> --}}
-    <div class="container">
+    <div class="pairing-container">
       <div class="card">
         <div class="face face1" id="beer-face">
           <div class="content beer-image">
@@ -10,6 +13,7 @@
             <p hidden id="beer-img-url"></p>
           </div>
         </div>
+
         <div class="face face2" id="beer-content">
           <div class="content">
             <h3 class="beer-name"></h3>
@@ -21,6 +25,7 @@
           </div>
         </div>
       </div>
+      
       <div class="card card-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +41,7 @@
           ></path>
         </svg>
       </div>
+      
       <div class="card">
         <div class="face face1" id="food-face">
           <div class="content dish-image">
@@ -59,9 +65,7 @@
         </div>
       </div>
     </div>
-
-    {{! <!--   ---- Buttons----  --> }}
-    <div class="comboBtnBox">
+    <div class="pairing-btn-container">
       {{!-- <div class="rating">
           <span class="rating-result"></span>
           <i class="rating-star far fa-star"></i>
@@ -76,21 +80,29 @@
       <button class="pairing-btn" id="save-pairing-btn" type="submit">
         <h2>Save Your Pairing</h2>
       </button>
+ 
     </div>
     </div>
 </section>
-<section class="savedPairs">
-  <div class="savedTxt">
+<section class="user-pairings-container">
+  <div class="user-pairings-card">
     <h2>My Saved Pairs</h2>
     {{#if loggedIn}}
       {{#each pairings}}
       {{> user-pairings}}
       {{/each}}
     {{else}}
-    <div class="loginSavedContainer">
-      <p class="Login--signup-text">Login or Sign Up to save pairings!</p>
+    <div class="login-pairings-container">
+      <p class="login-pairings-text">Login or Sign Up to save pairings!</p>
       <a href="#" class="login-btn"><button class="login-pairs-btn">LOGIN</button></a>
     </div>
     {{/if}}
   </div>
+</section>
+
+<section class ="funny-modal">
+    <img id="funny-icon" src="./assets/1485.gif">
+  <h3 id="funny-message"></h3>
+   <img id="funny-icon" src="./assets/1485.gif">
+ 
 </section>
